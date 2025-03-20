@@ -6,9 +6,10 @@ import { useCart } from "@/context/CartContext";
 import { Button } from "@/components/ui/button";
 import { 
   ShoppingCart, 
-  Heart, 
-  Star
+  Star,
+  Flower
 } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface ProductCardProps {
   product: Product;
@@ -25,16 +26,27 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index = 0 }) => {
   };
 
   return (
-    <div 
+    <motion.div 
       className="group relative glass-card rounded-xl overflow-hidden"
       style={{ 
         "--index": index, 
       } as React.CSSProperties}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      whileHover={{ y: -5 }}
     >
       <div className="relative aspect-square overflow-hidden">
         {/* Placeholder for product image */}
-        <div className="absolute inset-0 bg-gradient-to-br from-plant-100 to-plant-300 flex items-center justify-center">
-          <span className="text-plant-800 font-medium">{product.name}</span>
+        <div className="absolute inset-0 bg-gradient-to-br from-plant-900 to-plant-700 flex items-center justify-center">
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0.5 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            <Flower className="h-12 w-12 text-plant-300" />
+          </motion.div>
+          <span className="absolute bottom-4 text-plant-100 font-medium">{product.name}</span>
         </div>
         
         {/* When we have actual images */}
@@ -46,23 +58,20 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index = 0 }) => {
         
         {/* Quick add button */}
         <div className="absolute right-2 bottom-2">
-          <Button 
-            size="icon"
-            className="rounded-full shadow-lg bg-white hover:bg-plant-500 hover:text-white opacity-0 group-hover:opacity-100 transition-all duration-300"
-            onClick={handleAddToCart}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2 }}
           >
-            <ShoppingCart className="h-4 w-4" />
-          </Button>
+            <Button 
+              size="icon"
+              className="rounded-full shadow-lg bg-dark-800 hover:bg-plant-500 hover:text-white opacity-0 group-hover:opacity-100 transition-all duration-300"
+              onClick={handleAddToCart}
+            >
+              <ShoppingCart className="h-4 w-4" />
+            </Button>
+          </motion.div>
         </div>
-        
-        {/* Wishlist button */}
-        <Button 
-          size="icon"
-          variant="ghost" 
-          className="absolute top-2 right-2 text-foreground/50 hover:text-rose-500 hover:bg-white/20 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        >
-          <Heart className="h-4 w-4" />
-        </Button>
       </div>
       
       <Link to={`/product/${product.slug}`} className="block p-4">
@@ -84,13 +93,13 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index = 0 }) => {
         <div className="grid grid-cols-2 gap-2">
           <Button 
             variant="outline" 
-            className="w-full border-plant-500 text-plant-700 hover:bg-plant-500 hover:text-white"
+            className="w-full border-plant-500 text-plant-400 hover:bg-plant-500 hover:text-dark-900"
             onClick={handleAddToCart}
           >
             Add to Cart
           </Button>
           <Button 
-            className="w-full bg-plant-500 text-white hover:bg-plant-600"
+            className="w-full bg-plant-500 text-dark-900 hover:bg-plant-600"
             asChild
           >
             <Link to={`/product/${product.slug}`}>
@@ -99,7 +108,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index = 0 }) => {
           </Button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

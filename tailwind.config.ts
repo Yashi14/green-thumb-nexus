@@ -122,6 +122,22 @@ export default {
 					'0%, 100%': { opacity: '1' },
 					'50%': { opacity: '0.5' },
 				},
+				growLeaf: {
+					'0%': { transform: 'scale(0.5) rotate(0deg)', opacity: '0' },
+					'100%': { transform: 'scale(1) rotate(10deg)', opacity: '0.8' }
+				},
+				sway: {
+					'0%, 100%': { transform: 'rotate(-5deg)' },
+					'50%': { transform: 'rotate(5deg)' }
+				},
+				shimmer: {
+					'0%': { backgroundPosition: '-40rem 0' },
+					'100%': { backgroundPosition: '40rem 0' }
+				},
+				bounce: {
+					'0%, 100%': { transform: 'translateY(-5%)' },
+					'50%': { transform: 'translateY(0)' }
+				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -132,6 +148,10 @@ export default {
 				'scale-in': 'scale-in 0.3s ease-out',
 				'slide-in': 'slide-in 0.4s ease-out',
 				pulse: 'pulse 2s ease-in-out infinite',
+				growLeaf: 'growLeaf 1.5s ease-out',
+				sway: 'sway 3s ease-in-out infinite',
+				shimmer: 'shimmer 3s infinite linear',
+				bounce: 'bounce 2s infinite ease-in-out',
 			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
