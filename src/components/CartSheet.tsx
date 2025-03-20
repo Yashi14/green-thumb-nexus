@@ -119,7 +119,11 @@ const CartSheet = () => {
             Clear Cart
           </Button>
           <SheetClose asChild>
-            <Button className="w-full bg-plant-500 hover:bg-plant-600 text-white">
+            <Button 
+              className="w-full bg-plant-500 hover:bg-plant-600 text-white"
+              as={Link}
+              to="/checkout"
+            >
               Checkout
             </Button>
           </SheetClose>
