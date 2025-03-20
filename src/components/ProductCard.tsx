@@ -37,24 +37,24 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index = 0 }) => {
       whileHover={{ y: -5 }}
     >
       <div className="relative aspect-square overflow-hidden">
-        {/* Placeholder for product image */}
-        <div className="absolute inset-0 bg-gradient-to-br from-plant-900 to-plant-700 flex items-center justify-center">
-          <motion.div
-            initial={{ scale: 0.8, opacity: 0.5 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.5 }}
-          >
-            <Flower className="h-12 w-12 text-plant-300" />
-          </motion.div>
-          <span className="absolute bottom-4 text-plant-100 font-medium">{product.name}</span>
-        </div>
-        
-        {/* When we have actual images */}
-        {/* <img 
-          src={product.image} 
-          alt={product.name} 
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-        /> */}
+        {product.image ? (
+          <img 
+            src={product.image} 
+            alt={product.name} 
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        ) : (
+          <div className="absolute inset-0 bg-gradient-to-br from-plant-900 to-plant-700 flex items-center justify-center">
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0.5 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              <Flower className="h-12 w-12 text-plant-300" />
+            </motion.div>
+            <span className="absolute bottom-4 text-plant-100 font-medium">{product.name}</span>
+          </div>
+        )}
         
         {/* Quick add button */}
         <div className="absolute right-2 bottom-2">

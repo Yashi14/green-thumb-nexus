@@ -105,17 +105,14 @@ const Index = () => {
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
             >
               <motion.div 
-                className="relative aspect-[4/3] md:aspect-square bg-gradient-to-br from-plant-900 to-plant-800 rounded-2xl overflow-hidden glass-card flex items-center justify-center"
+                className="relative aspect-[4/3] md:aspect-square rounded-2xl overflow-hidden glass-card flex items-center justify-center"
                 whileHover={{ boxShadow: "0px 0px 30px rgba(48, 172, 91, 0.2)" }}
               >
-                <motion.div 
-                  className="text-plant-300 text-lg font-medium"
-                  animate={{ opacity: [0.7, 1, 0.7] }}
-                  transition={{ duration: 3, repeat: Infinity }}
-                >
-                  <Flower className="h-20 w-20 mx-auto mb-4" />
-                  Herbal Garden Kits
-                </motion.div>
+                <img 
+                  src="/lovable-uploads/6d832d82-c8b1-4112-8f7c-7ceaa59ede83.png" 
+                  alt="Herbal Garden Kit" 
+                  className="w-full h-full object-cover"
+                />
                 
                 {/* Animation elements */}
                 <motion.div

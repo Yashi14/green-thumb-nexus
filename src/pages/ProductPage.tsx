@@ -64,6 +64,7 @@ const ProductPage = () => {
   const handleBuyNow = () => {
     addToCart(product, quantity);
     // In a real app, navigate to checkout
+    navigate("/checkout");
     toast.success("Proceeding to checkout...");
   };
   
@@ -104,31 +105,31 @@ const ProductPage = () => {
                 className="aspect-square relative rounded-xl overflow-hidden glass-card"
                 whileHover={{ boxShadow: "0px 0px 30px rgba(48, 172, 91, 0.2)" }}
               >
-                {/* Placeholder for product image */}
-                <div className="absolute inset-0 bg-gradient-to-br from-plant-900 to-plant-700 flex items-center justify-center">
-                  <motion.div
-                    initial={{ scale: 0.8, opacity: 0.5 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 0.5 }}
-                  >
-                    <Flower className="h-20 w-20 text-plant-300" />
-                  </motion.div>
-                  <span className="absolute bottom-8 font-medium text-xl text-plant-100">{product.name}</span>
-                </div>
-                
-                {/* When we have actual images */}
-                {/* <AnimatePresence mode="wait">
-                  <motion.img 
-                    key={activeImage}
-                    src={product.image} 
-                    alt={product.name} 
-                    className="w-full h-full object-cover"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                  />
-                </AnimatePresence> */}
+                {product.image ? (
+                  <AnimatePresence mode="wait">
+                    <motion.img 
+                      key={activeImage}
+                      src={product.image} 
+                      alt={product.name} 
+                      className="w-full h-full object-cover"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                    />
+                  </AnimatePresence>
+                ) : (
+                  <div className="absolute inset-0 bg-gradient-to-br from-plant-900 to-plant-700 flex items-center justify-center">
+                    <motion.div
+                      initial={{ scale: 0.8, opacity: 0.5 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ duration: 0.5 }}
+                    >
+                      <Flower className="h-20 w-20 text-plant-300" />
+                    </motion.div>
+                    <span className="absolute bottom-8 font-medium text-xl text-plant-100">{product.name}</span>
+                  </div>
+                )}
                 
                 {/* Leaf animation for decoration */}
                 <motion.div
@@ -140,24 +141,64 @@ const ProductPage = () => {
                 </motion.div>
               </motion.div>
               
-              {/* Thumbnail Images */}
+              {/* Thumbnail Images - Kit image and other views */}
               <div className="grid grid-cols-4 gap-2">
-                {[0, 1, 2, 3].map((index) => (
-                  <motion.button
-                    key={index}
-                    className={`aspect-square rounded-md overflow-hidden ${
-                      activeImage === index ? "ring-2 ring-plant-500" : ""
-                    }`}
-                    onClick={() => setActiveImage(index)}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    {/* Placeholder for thumbnails */}
-                    <div className="h-full w-full bg-gradient-to-br from-plant-900 to-plant-700 flex items-center justify-center">
-                      <span className="text-plant-300 text-xs">{index + 1}</span>
-                    </div>
-                  </motion.button>
-                ))}
+                <motion.button
+                  className={`aspect-square rounded-md overflow-hidden ${
+                    activeImage === 0 ? "ring-2 ring-plant-500" : ""
+                  }`}
+                  onClick={() => setActiveImage(0)}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <img 
+                    src={product.image} 
+                    alt={`${product.name} thumbnail 1`}
+                    className="h-full w-full object-cover"
+                  />
+                </motion.button>
+                <motion.button
+                  className={`aspect-square rounded-md overflow-hidden ${
+                    activeImage === 1 ? "ring-2 ring-plant-500" : ""
+                  }`}
+                  onClick={() => setActiveImage(1)}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <img 
+                    src={product.kitImage || "/lovable-uploads/6d832d82-c8b1-4112-8f7c-7ceaa59ede83.png"} 
+                    alt={`${product.name} kit`}
+                    className="h-full w-full object-cover"
+                  />
+                </motion.button>
+                <motion.button
+                  className={`aspect-square rounded-md overflow-hidden ${
+                    activeImage === 2 ? "ring-2 ring-plant-500" : ""
+                  }`}
+                  onClick={() => setActiveImage(2)}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <img 
+                    src="/lovable-uploads/8ec10397-adcf-48f6-8da1-02c859733ac9.png"
+                    alt="Spray bottle"
+                    className="h-full w-full object-cover"
+                  />
+                </motion.button>
+                <motion.button
+                  className={`aspect-square rounded-md overflow-hidden ${
+                    activeImage === 3 ? "ring-2 ring-plant-500" : ""
+                  }`}
+                  onClick={() => setActiveImage(3)}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <img 
+                    src="/lovable-uploads/b5c8ac5b-3215-4ec9-abc2-11b2175902d5.png"
+                    alt="Soil packets"
+                    className="h-full w-full object-cover"
+                  />
+                </motion.button>
               </div>
             </motion.div>
             
