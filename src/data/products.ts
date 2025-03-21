@@ -9,6 +9,7 @@ export interface Product {
   price: number;
   image: string;
   kitImage?: string;
+  additionalImages?: string[];
   rating: number;
   features: string[];
   includes: { item: string; quantity: string }[];
@@ -26,8 +27,13 @@ export const products: Product[] = [
     shortDescription: "Complete kit with everything you need to grow fresh ginger at home",
     description: "Our premium Ginger Plantation Kit provides everything you need to successfully grow aromatic ginger at home. Perfect for beginners and experienced gardeners alike, this comprehensive kit contains high-quality ginger rhizomes, nutrient-rich soil, organic fertilizer, and a stylish pot. Ginger is not only a delicious culinary ingredient but also offers numerous health benefits. With our detailed plantation manual, you'll be harvesting your own ginger in no time!",
     price: 499,
-    image: "/lovable-uploads/3cf4773e-538e-451b-9630-fadd3c798455.png",
-    kitImage: "/lovable-uploads/6d832d82-c8b1-4112-8f7c-7ceaa59ede83.png",
+    image: "/lovable-uploads/378ab556-b21f-475f-be86-da49ee7aa482.png",
+    kitImage: "/lovable-uploads/1e2afca5-211b-46bc-82a9-407ce847cb28.png",
+    additionalImages: [
+      "/lovable-uploads/cc6c125b-cd44-413f-85d2-b48f8643b053.png",
+      "/lovable-uploads/03d68765-a7f0-4795-af18-349cc961b38c.png",
+      "/lovable-uploads/bbc793ea-4a92-4a34-801e-84d1acd983ee.png"
+    ],
     rating: 4.7,
     features: [
       "Ready to grow kit for fresh ginger",
@@ -69,8 +75,13 @@ export const products: Product[] = [
     shortDescription: "Complete kit to grow sacred Tulsi (Holy Basil) at home",
     description: "Our Tulsi Plantation Kit is carefully designed to help you grow this sacred medicinal plant at home with ease. Revered in Ayurvedic tradition for its healing properties, Tulsi (Holy Basil) is the perfect addition to any home garden. This comprehensive kit includes everything you need: premium Tulsi seeds, specially formulated soil, organic fertilizer, a decorative pot, and detailed instructions. Experience the spiritual and physical benefits of growing your own Tulsi plant!",
     price: 450,
-    image: "/lovable-uploads/18694cba-7b5f-47c3-973a-b002a7cb13d6.png",
-    kitImage: "/lovable-uploads/6d832d82-c8b1-4112-8f7c-7ceaa59ede83.png",
+    image: "/lovable-uploads/4f5b1702-3727-4a97-8437-31ee7d3974db.png",
+    kitImage: "/lovable-uploads/1e2afca5-211b-46bc-82a9-407ce847cb28.png",
+    additionalImages: [
+      "/lovable-uploads/cc6c125b-cd44-413f-85d2-b48f8643b053.png",
+      "/lovable-uploads/03d68765-a7f0-4795-af18-349cc961b38c.png",
+      "/lovable-uploads/bbc793ea-4a92-4a34-801e-84d1acd983ee.png"
+    ],
     rating: 4.8,
     features: [
       "Complete kit for growing sacred Tulsi at home",
@@ -112,8 +123,13 @@ export const products: Product[] = [
     shortDescription: "Everything you need to grow your own healing Aloe Vera plant",
     description: "Our premium Aloe Vera Plantation Kit makes growing this incredible medicinal plant at home simple and rewarding. Aloe Vera is renowned for its healing properties and makes a stunning addition to any indoor garden. This complete kit includes a healthy Aloe Vera pup (young plant), specially formulated succulent soil, slow-release fertilizer, a stylish pot with proper drainage, and a comprehensive care guide. Start enjoying the benefits of fresh Aloe Vera gel straight from your own plant!",
     price: 599,
-    image: "/lovable-uploads/9c862c5b-e573-438f-99db-588dba5a0e10.png",
-    kitImage: "/lovable-uploads/6d832d82-c8b1-4112-8f7c-7ceaa59ede83.png",
+    image: "/lovable-uploads/f2706047-f36f-488b-ab8a-077d6e5f3584.png",
+    kitImage: "/lovable-uploads/1e2afca5-211b-46bc-82a9-407ce847cb28.png",
+    additionalImages: [
+      "/lovable-uploads/cc6c125b-cd44-413f-85d2-b48f8643b053.png",
+      "/lovable-uploads/03d68765-a7f0-4795-af18-349cc961b38c.png",
+      "/lovable-uploads/bbc793ea-4a92-4a34-801e-84d1acd983ee.png"
+    ],
     rating: 4.9,
     features: [
       "Complete kit for growing Aloe Vera at home",
@@ -155,8 +171,13 @@ export const products: Product[] = [
     shortDescription: "Grow your own organic turmeric with this complete kit",
     description: "Our comprehensive Turmeric Plantation Kit provides everything you need to grow this powerful medicinal spice at home. Turmeric is celebrated for its anti-inflammatory properties and vibrant golden color. This carefully curated kit includes premium turmeric rhizomes, specialized soil mix, organic fertilizer, a decorative pot, and detailed growing instructions. Experience the satisfaction of harvesting your own organic turmeric and incorporating it into your culinary and wellness routines!",
     price: 549,
-    image: "/lovable-uploads/b5c8ac5b-3215-4ec9-abc2-11b2175902d5.png",
-    kitImage: "/lovable-uploads/6d832d82-c8b1-4112-8f7c-7ceaa59ede83.png",
+    image: "/lovable-uploads/cdd8bbb6-b4ee-4be7-bcf1-7d6b8404d2a1.png",
+    kitImage: "/lovable-uploads/1e2afca5-211b-46bc-82a9-407ce847cb28.png",
+    additionalImages: [
+      "/lovable-uploads/cc6c125b-cd44-413f-85d2-b48f8643b053.png",
+      "/lovable-uploads/03d68765-a7f0-4795-af18-349cc961b38c.png",
+      "/lovable-uploads/bbc793ea-4a92-4a34-801e-84d1acd983ee.png"
+    ],
     rating: 4.6,
     features: [
       "Complete kit for growing fresh turmeric at home",
@@ -198,8 +219,13 @@ export const products: Product[] = [
     shortDescription: "Complete kit to grow aromatic eucalyptus at home",
     description: "Our premium Eucalyptus Plantation Kit makes it easy to grow this aromatic and beneficial plant in your home garden. Eucalyptus is renowned for its refreshing scent and medicinal properties. This comprehensive kit includes everything you need: high-quality eucalyptus seeds, specialized soil mix, organic fertilizer, an elegant pot, and detailed growing instructions. Enjoy the beauty and benefits of fresh eucalyptus leaves for aromatherapy, decoration, and more!",
     price: 649,
-    image: "/lovable-uploads/42ca8551-80ce-48d2-b16b-837d5fea8fc7.png",
-    kitImage: "/lovable-uploads/6d832d82-c8b1-4112-8f7c-7ceaa59ede83.png",
+    image: "/lovable-uploads/10c3de2f-cdae-49da-8141-5ad333391a6b.png",
+    kitImage: "/lovable-uploads/1e2afca5-211b-46bc-82a9-407ce847cb28.png",
+    additionalImages: [
+      "/lovable-uploads/cc6c125b-cd44-413f-85d2-b48f8643b053.png",
+      "/lovable-uploads/03d68765-a7f0-4795-af18-349cc961b38c.png",
+      "/lovable-uploads/bbc793ea-4a92-4a34-801e-84d1acd983ee.png"
+    ],
     rating: 4.5,
     features: [
       "Complete kit for growing eucalyptus at home",
@@ -241,8 +267,13 @@ export const products: Product[] = [
     shortDescription: "Grow calming lavender at home with this complete kit",
     description: "Our elegant Lavender Plantation Kit provides everything you need to grow this beloved aromatic herb at home. Lavender is prized for its calming scent, beautiful purple blooms, and versatile uses. This carefully curated kit includes premium lavender seeds, specialized soil mix, organic plant food, a decorative pot, and comprehensive growing instructions. Bring the soothing fragrance and beauty of a lavender garden to your home with this all-inclusive growing kit!",
     price: 699,
-    image: "/lovable-uploads/3595473e-20c9-4545-93f7-7f0c76b7702b.png",
-    kitImage: "/lovable-uploads/6d832d82-c8b1-4112-8f7c-7ceaa59ede83.png",
+    image: "/lovable-uploads/5c0138f2-15b2-40b6-b68b-b12ab0b3faa7.png",
+    kitImage: "/lovable-uploads/1e2afca5-211b-46bc-82a9-407ce847cb28.png",
+    additionalImages: [
+      "/lovable-uploads/cc6c125b-cd44-413f-85d2-b48f8643b053.png",
+      "/lovable-uploads/03d68765-a7f0-4795-af18-349cc961b38c.png",
+      "/lovable-uploads/bbc793ea-4a92-4a34-801e-84d1acd983ee.png"
+    ],
     rating: 4.8,
     features: [
       "Complete kit for growing lavender at home",

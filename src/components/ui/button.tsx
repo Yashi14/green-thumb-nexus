@@ -1,3 +1,4 @@
+
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
@@ -38,12 +39,23 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean
-  to?: string // Add support for 'to' prop for Link compatibility
+  to?: string
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, to, ...props }, ref) => {
-    // If 'to' prop is provided, render a Link component
+    // If asChild is true and a 'to' prop is provided, we allow the Link component to be used
+    if (asChild && to) {
+      return (
+        <Slot className={cn(buttonVariants({ variant, size, className }))}>
+          <Link to={to} {...(props as any)}>
+            {props.children}
+          </Link>
+        </Slot>
+      )
+    }
+    
+    // If just 'to' is provided (without asChild), render a Link directly
     if (to) {
       return (
         <Link
@@ -56,7 +68,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       )
     }
     
-    // Otherwise render a regular button
+    // Default button behavior
     const Comp = asChild ? Slot : "button"
     return (
       <Comp

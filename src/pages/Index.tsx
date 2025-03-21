@@ -109,8 +109,8 @@ const Index = () => {
                 whileHover={{ boxShadow: "0px 0px 30px rgba(48, 172, 91, 0.2)" }}
               >
                 <img 
-                  src="/lovable-uploads/6d832d82-c8b1-4112-8f7c-7ceaa59ede83.png" 
-                  alt="Herbal Garden Kit" 
+                  src="/lovable-uploads/1e2afca5-211b-46bc-82a9-407ce847cb28.png" 
+                  alt="Plantation Kit" 
                   className="w-full h-full object-cover"
                 />
                 
