@@ -6,7 +6,6 @@ import ProductPage from "@/pages/ProductPage";
 import NotFound from "@/pages/NotFound";
 import { CartProvider } from "@/context/CartContext";
 import Checkout from "@/pages/Checkout";
-import ConnectPage from "@/pages/ConnectPage";
 
 const App = () => {
   return (
@@ -16,7 +15,6 @@ const App = () => {
           <Route path="/" element={<Index />} />
           <Route path="/product/:slug" element={<ProductPage />} />
           <Route path="/checkout" element={<Checkout />} />
-          <Route path="/connect" element={<ConnectPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </CartProvider>
