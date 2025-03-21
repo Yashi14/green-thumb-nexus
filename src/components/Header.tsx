@@ -1,5 +1,5 @@
 
-// Update Header.tsx to include the 3D Model link
+// Update Header.tsx to include the Connect link
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useCart } from "@/context/CartContext";
@@ -13,7 +13,8 @@ import {
   ScanSearch,
   Scan,
   Flower,
-  Cube
+  Box3d,
+  Users
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -99,6 +100,9 @@ const Header = () => {
           </Link>
           <Link to="/3d-models" className="text-foreground/80 hover:text-plant-500 transition-colors">
             3D Models
+          </Link>
+          <Link to="/connect" className="text-foreground/80 hover:text-plant-500 transition-colors">
+            Connect
           </Link>
           <Link to="/" className="text-foreground/80 hover:text-plant-500 transition-colors">
             Identify Plants
@@ -234,6 +238,13 @@ const Header = () => {
               onClick={() => setIsMobileMenuOpen(false)}
             >
               3D Models
+            </Link>
+            <Link 
+              to="/connect" 
+              className="px-4 py-2 rounded-md hover:bg-plant-500/10 transition-colors"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Connect
             </Link>
             <Link 
               to="/" 

@@ -8,6 +8,7 @@ import { CartProvider } from "@/context/CartContext";
 import Checkout from "@/pages/Checkout";
 import ModelsPage from "@/pages/ModelsPage";
 import PlantModelViewer from "@/pages/PlantModelViewer";
+import ConnectPage from "@/pages/ConnectPage";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/3d-models" element={<ModelsPage />} />
           <Route path="/3d-models/:plantId" element={<PlantModelViewer />} />
+          <Route path="/connect" element={<ConnectPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </CartProvider>
