@@ -11,7 +11,7 @@ import {
   Leaf, 
   Tag, 
   Image as ImageIcon,
-  Plant,
+  Flower,
   BookOpen
 } from "lucide-react";
 import Header from "@/components/Header";
@@ -331,7 +331,7 @@ const ConnectPage = () => {
                 <div className="flex justify-between items-center">
                   <div className="flex items-center gap-2">
                     <div className="h-8 w-8 rounded-full bg-plant-600 flex items-center justify-center">
-                      <Plant className="h-4 w-4 text-white" />
+                      <Flower className="h-4 w-4 text-white" />
                     </div>
                     <div>
                       <h3 className="text-sm font-medium">Medicinal Plants</h3>
